@@ -4,6 +4,7 @@
 #include <stdio.h>
 /**
  * print_str - print string to stdout
+ * @str: string
  * Return: number of characters of the string
  */
 int print_str(char *str)
@@ -25,7 +26,7 @@ int print_str(char *str)
 }
 
 /**
- * print_str - print a character to stdout
+ * print_chr - print a character to stdout
  * @chr: pointer to character
  * Return: 1
  */
