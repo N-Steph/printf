@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 			switch (current_character)
 			{
 				case 'c':
-					len_str += print_chr(va_arg(ap, int));
+					len_str += print_chr(va_arg(ap, unsigned int));
 					break;
 				case 's':
 					len_str += print_str(va_arg(ap, char *));
