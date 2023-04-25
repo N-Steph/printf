@@ -104,7 +104,7 @@ int print_percent(unsigned int chr)
 
 /**
  * print_ordinary_char - print character
- * @ch: pointer to character 
+ * @ch: pointer to character
  *
  * Return: number of character printed
  */
