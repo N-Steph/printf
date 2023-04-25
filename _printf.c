@@ -11,11 +11,10 @@
  */
 int _printf(const char *format, ...)
 {
-	int len_str;
+	int len_str = 0;
 	char current_character;
 	va_list ap;
 
-	len_str = 0;
 	va_start(ap, format);
 	if (format == 0)
 		return (-1);
@@ -24,6 +23,8 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
+			if (*format == '\0')
+				return (-1);
 			current_character = *format;
 			switch (current_character)
 			{
@@ -37,10 +38,7 @@ int _printf(const char *format, ...)
 					len_str += write(1, format, 1);
 					break;
 				default:
-					format--;
-					len_str += write(1, format, 1);
-					format++;
-					len_str += write(1, format, 1);
+					len_str += print_ordinary_char(format);
 			}
 		}
 		else
