@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * print_u - print unsigned number
@@ -20,5 +21,6 @@ int print_u(va_list args)
 		u++;
 		++len;
 	}
+	free(u);
 	return (len);
 }
