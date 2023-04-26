@@ -18,6 +18,7 @@ struct _case
 	char c;
 	int (*print)(va_list args);
 };
+unsigned int _abs(int x);
 int _putchar(char c);
 int print_chr(va_list args);
 int print_str(va_list args);

@@ -10,7 +10,7 @@ int print_int(va_list args)
 {
 	int x = va_arg(args, int);
 	int len = 0;
-	char *result = convert(x, 10);
+	char *result = convert(_abs(x), 10);
 
 	if (x < 0)
 	{
