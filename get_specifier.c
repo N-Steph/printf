@@ -16,20 +16,14 @@ int get_specifier(char chr, va_list args)
  * @c: char
  * @print: function
  */
-	struct _case 
+	struct _case
 	{
 		char c;
 		int (*print)(va_list args);
 	};
 	struct _case all[] = {
-		{'c', print_chr},
-		{'s', print_str},
-		{'d', print_int},
-		{'i', print_int},
-		{'b', print_bin},
-		{'u', print_u},
-		{'o', print_oct},
-		{'x', print_hex},
+		{'c', print_chr}, {'s', print_str}, {'d', print_int}, {'i', print_int},
+		{'b', print_bin}, {'u', print_u}, {'o', print_oct}, {'x', print_hex},
 		{'X', print_HEX}
 	};
 	int j = 0;
