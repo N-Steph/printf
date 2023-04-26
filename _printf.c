@@ -1,54 +1,36 @@
 #include "main.h"
-#include <unistd.h>
-#include <stdarg.h>
-#include <stdlib.h>
 
 /**
- * _printf - print format string
- * @format: character string
+ * _printf -  function that work like printf
+ * @format: string conteining text to  print
  *
- * Return: number of characters printed
+ * Return: number of char printed
  */
-int _printf(const char *format, ...)
+int _printf(const char * const format, ...)
 {
-	int len_str;
-	char current_character;
-	va_list ap;
+	int len_str = 0;
+	int i = 0;
+	va_list args;
 
-	len_str = 0;
-	va_start(ap, format);
-	if (format == 0 || *format == '\0')
+	va_start(args, format);
+	if (format == NULL)
 		return (-1);
-	while (*format != '\0')
+	if (format[0] == '\0')
+		return (0);
+	while (format[i] != '\0')
 	{
-		if (*format == '%')
+		if (format[i] == '%')
 		{
-			format++;
-			current_character = *format;
-			switch (current_character)
-			{
-				case 'c':
-					len_str += print_chr(va_arg(ap, int));
-					break;
-				case 's':
-					len_str += print_str(va_arg(ap, char *));
-					break;
-				case '%':
-					len_str += write(1, format, 1);
-					break;
-				default:
-					format--;
-					len_str += write(1, format, 1);
-					format++;
-					len_str += write(1, format, 1);
-			}
+			if (format[i + 1] == '\0')
+				return (-1);
+			len_str += get_specifier(format[i + 1], args);
+			++i;
 		}
 		else
-		{
-			len_str += write(1, format, 1);
-		}
-		format++;
+			len_str += get(format[i]);
+
+		++i;
 	}
-	va_end(ap);
+	va_end(args);
 	return (len_str);
 }
