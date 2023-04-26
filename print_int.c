@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * print_int - print decimal & integer
@@ -27,5 +28,6 @@ int print_int(va_list args)
 		result++;
 		++len;
 	}
+	free(result);
 	return (len);
 }

@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * print_bin - print binary number
@@ -21,5 +22,6 @@ int print_bin(va_list args)
 		result++;
 		++len;
 	}
+	free(result);
 	return (len);
 }

@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * print_oct - print number in base 8
@@ -20,5 +21,6 @@ int print_oct(va_list args)
 		oct++;
 		++len;
 	}
+	free(oct);
 	return (len);
 }

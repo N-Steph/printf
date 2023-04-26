@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * print_HEX - print number in bae 16 & in uppercase
@@ -20,5 +21,6 @@ int print_HEX(va_list args)
 		HEX++;
 		++len;
 	}
+	free(HEX);
 	return (len);
 }
