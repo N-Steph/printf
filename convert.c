@@ -15,7 +15,7 @@ char *convert(unsigned int num, int base)
 
 	*ptr = '\0';
 	if (result == NULL)
-		return (NULL);
+		return (0);
 	do {
 		*--ptr = digits[num % base];
 		num /= base;
