@@ -37,6 +37,12 @@ int get_specifier(char chr, va_list args)
 			return (len);
 		}
 		++j;
+		if (j == 9)
+		{
+			len += _putchar('%');
+			len += _putchar(chr);
+			return (len);
+		}
 	}
 	return (0);
 }
