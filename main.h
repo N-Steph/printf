@@ -27,7 +27,7 @@ int print_u(va_list args);
 int print_hex(va_list args);
 int print_oct(va_list args);
 int print_HEX(va_list args);
-char *convert(unsigned int num, int base);
+char *convert(int num, int base);
 int get_specifier(char chr, va_list args);
 int get(char chr);
 int _printf(const char * const format, ...);

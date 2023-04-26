@@ -8,17 +8,21 @@
  */
 int print_int(va_list args)
 {
-	int x;
-	int len;
+	int x = va_arg(args, int);
+	int len = 0;
+	char *result = convert(x, 10);
 
-	x = va_arg(args, int);
-	len = 0;
 	if (x < 0)
 	{
 		x = -x;
 		_putchar('-');
 		len += 1;
 	}
-	len += (puts(convert(x, 10)) - 1);
+	while (*result != '\0')
+	{
+		_putchar(*result);
+		result++;
+		++len;
+	}
 	return (len);
 }
