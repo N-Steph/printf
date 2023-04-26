@@ -13,10 +13,17 @@ int print_str(va_list args)
 
 	len = 0;
 	s = va_arg(args, char*);
-	while (*s != '\0')
+	if (s == NULL)
 	{
-		len += _putchar(*s);
-		++s;
+		len += write(1, "(null)", 6);
+	}
+	else
+	{
+		while (*s != '\0')
+		{
+			len += _putchar(*s);
+			++s;
+		}
 	}
 	return (len);
 }
