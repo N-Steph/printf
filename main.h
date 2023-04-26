@@ -32,4 +32,4 @@ int get_specifier(char chr, va_list args);
 int get(char chr);
 int _printf(const char * const format, ...);
 
-#endif
+#endif /* MAIN_H */
