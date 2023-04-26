@@ -11,6 +11,16 @@
 int get_specifier(char chr, va_list args)
 {
 	int len = 0;
+/**
+ * struct _case - List of all differents cases
+ * @c: char
+ * @print: function
+ */
+	struct _case 
+	{
+		char c;
+		int (*print)(va_list args);
+	};
 	struct _case all[] = {
 		{'c', print_chr},
 		{'s', print_str},
