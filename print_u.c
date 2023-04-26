@@ -14,7 +14,7 @@ int print_u(va_list args)
 
 	if (u == NULL)
 		return (0);
-	while (*u != ''\0)
+	while (*u != '\0')
 	{
 		_putchar(*u);
 		u++;
