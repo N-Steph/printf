@@ -9,11 +9,17 @@
  */
 int print_bin(va_list args)
 {
-	unsigned int x;
-	int len;
+	unsigned int x = va_arg(args, unsigned int);
+	int len = 0;
+	char *result = convert(x, 2);
 
-	x = va_arg(args, unsigned int);
-	len = 0;
-	len += (puts(convert(x, 2)) - 1);
+	if (result == NULL)
+		return (0);
+	while (*result != '\0')
+	{
+		_putchar(*result);
+		result++;
+		++len;
+	}
 	return (len);
 }
