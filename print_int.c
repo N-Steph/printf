@@ -12,6 +12,8 @@ int print_int(va_list args)
 	int len = 0;
 	char *result = convert(_abs(x), 10);
 
+	if (result == NULL)
+		return (0);
 	if (x < 0)
 	{
 		x = -x;
