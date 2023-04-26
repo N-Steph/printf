@@ -8,11 +8,17 @@
  */
 int print_u(va_list args)
 {
-	unsigned int x;
-	int len;
+	unsigned int x = va_arg(args, unsigned int);
+	int len = 0;
+	char *u = convert(x, 10);
 
-	x = va_arg(args, unsigned int);
-	len = 0;
-	len += (puts(convert(x, 10)) - 1);
+	if (u == NULL)
+		return (0);
+	while (*u != ''\0)
+	{
+		_putchar(*u);
+		u++;
+		++len;
+	}
 	return (len);
 }

@@ -8,11 +8,17 @@
  */
 int print_HEX(va_list args)
 {
-	unsigned int x;
-	int len;
+	unsigned int x = va_arg(args, unsigned int);
+	int len = 0;
+	char *HEX = convert(x, 16);
 
-	x = va_arg(args, unsigned int);
-	len = 0;
-	len += (puts(convert(x, 16)) - 1);
+	if (HEX == NULL)
+		return (0);
+	while (*HEX != '\0')
+	{
+		_putchar(*HEX);
+		HEX++;
+		++len;
+	}
 	return (len);
 }

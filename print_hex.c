@@ -12,6 +12,8 @@ int print_hex(va_list args)
 	int len = 0;
 	char *hex = convert(x, 16);
 
+	if (hex == NULL)
+		return (0);
 	while (*hex != '\0')
 	{
 		if (*hex >= 'A' && *hex <= 'F')

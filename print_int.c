@@ -14,6 +14,7 @@ int print_int(va_list args)
 
 	if (result == NULL)
 		return (0);
+
 	if (x < 0)
 	{
 		x = -x;

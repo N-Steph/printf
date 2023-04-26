@@ -8,11 +8,17 @@
  */
 int print_oct(va_list args)
 {
-	unsigned int x;
-	int len;
+	unsigned int x = va_arg(args, unsigned int);
+	int len = 0;
+	char *oct = convert(x, 8);
 
-	x = va_arg(args, unsigned int);
-	len = 0;
-	len += (puts(convert(x, 8)) - 1);
+	if (oct == NULL)
+		return (0);
+	while (*oct != '\0')
+	{
+		_putchar(*oct);
+		oct++;
+		++len;
+	}
 	return (len);
 }
