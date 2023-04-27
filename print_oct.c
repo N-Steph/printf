@@ -21,7 +21,7 @@ int print_oct(va_list args)
 		oct++;
 		++len;
 	}
-	result -= 63;
-	free(result);
+	oct -= 63;
+	free(oct);
 	return (len);
 }

@@ -25,7 +25,7 @@ int print_hex(va_list args)
 			len += _putchar(*hex);
 		hex++;
 	}
-	result -= 63;
-	free(result);
+	hex -= 63;
+	free(hex);
 	return (len);
 }
