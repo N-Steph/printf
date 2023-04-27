@@ -22,6 +22,7 @@ int _printf(const char * const format, ...)
 			if (format[i + 1] == '\0')
 				return (-1);
 			len_str += get_specifier(format[i + 1], args);
+			++i;
 		}
 		else
 			len_str += get(format[i]);
