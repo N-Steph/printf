@@ -12,6 +12,7 @@ int print_HEX(va_list args)
 	unsigned int x = va_arg(args, unsigned int);
 	int len = 0;
 	char *HEX = convert(x, 16);
+	char *ptr_temp = HEX;
 
 	if (HEX == NULL)
 		return (0);
@@ -21,6 +22,6 @@ int print_HEX(va_list args)
 		HEX++;
 		++len;
 	}
-	free(HEX);
+	free(ptr_temp);
 	return (len);
 }

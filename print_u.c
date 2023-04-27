@@ -12,6 +12,7 @@ int print_u(va_list args)
 	unsigned int x = va_arg(args, unsigned int);
 	int len = 0;
 	char *u = convert(x, 10);
+	char *ptr_temp = u
 
 	if (u == NULL)
 		return (0);
@@ -21,6 +22,6 @@ int print_u(va_list args)
 		u++;
 		++len;
 	}
-	free(u);
+	free(ptr_temp);
 	return (len);
 }

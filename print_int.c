@@ -12,6 +12,7 @@ int print_int(va_list args)
 	int x = va_arg(args, int);
 	int len = 0;
 	char *result = convert(_abs(x), 10);
+	char *ptr_temp = result;
 
 	if (result == NULL)
 		return (0);
@@ -28,6 +29,6 @@ int print_int(va_list args)
 		result++;
 		++len;
 	}
-	free(result);
+	free(ptr_temp);
 	return (len);
 }

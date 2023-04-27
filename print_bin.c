@@ -13,6 +13,7 @@ int print_bin(va_list args)
 	unsigned int x = va_arg(args, unsigned int);
 	int len = 0;
 	char *result = convert(x, 2);
+	char *ptr_temp = result;
 
 	if (result == NULL)
 		return (0);
@@ -22,6 +23,6 @@ int print_bin(va_list args)
 		result++;
 		++len;
 	}
-	free(result);
+	free(ptr_temp);
 	return (len);
 }
