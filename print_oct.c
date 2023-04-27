@@ -12,7 +12,6 @@ int print_oct(va_list args)
 	unsigned int x = va_arg(args, unsigned int);
 	int len = 0;
 	char *oct = convert(x, 8);
-	char *ptr_temp = oct;
 
 	if (oct == NULL)
 		return (0);
@@ -22,6 +21,5 @@ int print_oct(va_list args)
 		oct++;
 		++len;
 	}
-	free(ptr_temp);
 	return (len);
 }
