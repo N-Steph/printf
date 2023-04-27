@@ -21,5 +21,7 @@ int print_u(va_list args)
 		u++;
 		++len;
 	}
+	result -= 63;
+	free(result);
 	return (len);
 }

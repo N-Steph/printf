@@ -21,5 +21,7 @@ int print_HEX(va_list args)
 		HEX++;
 		++len;
 	}
+	result -= 63;
+	free(result);
 	return (len);
 }
