@@ -20,8 +20,8 @@ int print_bin(va_list args)
 	{
 		_putchar(*result);
 		result++;
-		++len;
 	}
+	len = 1;
 	result -= 63;
 	free(result);
 	return (len);
