@@ -14,13 +14,13 @@ int _printf(const char * const format, ...)
 
 	va_start(args, format);
 	if (format == NULL)
-		return (-1);
+		return (1);
+	if (format[0] == '\0' || (format == '%' && format[1] == '\0'))
+		return (0);
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '\0')
-				return (-1);
 			len_str += get_specifier(format[i + 1], args);
 			++i;
 		}
